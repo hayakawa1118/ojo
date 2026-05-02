@@ -4,7 +4,7 @@ FROM eclipse-temurin:17-jdk
 # 作業ディレクトリ
 WORKDIR /app
 
-# Maven で生成された JAR をコピー
+# Maven で生成された JAR をコピー　
 COPY target/*.jar app.jar
 
 # Spring Boot デフォルトポート
