@@ -160,48 +160,6 @@
 <script src="js/parts.js"></script>
 
 <!--スライド用になってた画像を横スクロースするためのスクリプト-->
-<script>
-	let startX = 0;
-	let endX = 0;
-	let current = 0;
-
-	const slides = document.querySelectorAll(".mainimg .slide");
-	const slider = document.querySelector(".mainimg");
-
-	function showSlide(index){
-		slides.forEach((s,i)=>{
-			s.classList.remove("active");
-			if(i === index){
-				s.classList.add("active");
-			}
-		});
-	}
-
-	// タッチ開始
-	slider.addEventListener("touchstart", function(e){
-		startX = e.touches[0].clientX;
-	}, { passive: false });
-
-	// タッチ終了
-	slider.addEventListener("touchend", function(e){
-		endX = e.changedTouches[0].clientX;
-
-		const diff = startX - endX;
-
-		// 50px未満は無視
-		if(Math.abs(diff) < 50) return;
-
-		if(diff > 0){
-			// ←左スワイプ（次へ）
-			current = (current + 1) % slides.length;
-		}else{
-			// →右スワイプ（前へ）
-			current = (current - 1 + slides.length) % slides.length;
-		}
-
-		showSlide(current);
-	});
-</script>
 
 </body>
 </html>

@@ -578,6 +578,3 @@ a.ddmenu::before {
 .mainimg .slide.zoom img {
 	transform: scale(1.07);
 }
-.mainimg {
-	touch-action: pan-y;
-}
